@@ -18,7 +18,7 @@ Follow these steps to config:
 6. Config nginx by `vi /etc/nginx/sites-available/default`. See config sample below to know how to config.
 7. Config HTTPS with `sudo certbot --nginx`. Follow the instructions to config it (and it's super easy, really).
 8. `npm install -g supervisor`
-9. `npm install` and `npm start`, and `/start` the bot. Then tell your friend to chat with bot, the message will forward to you.
+9. `npm install` and `npm start`, and `/start` the bot. Then tell your friend to chat with bot, the message will be forwarded to you.
 
 ## Config sample
 `config.js`:
@@ -28,7 +28,7 @@ module.exports = {
   telegram: {
     bot_token: '123456789:ABCDEFGhijklmnOPQRSTuvwxyz012345678',
     user_id: 12345678, // Get it with https://t.me/get_id_bot,
-    start_msg: 'hello world' // When your friends /start the bot, this text message will send to them.
+    start_msg: 'hello world' // When your friends /start the bot, this text message will be sent to them.
   },
   instapaper: { // That information is optional. If you don't need it, just make them as empty strings.
     username: 'someone@example.com',
@@ -126,7 +126,6 @@ server {
 配置好你的 Instapaper 用户名密码之后，可以向 bot 直接发送或转发 URL 链接，链接就会自动存在你的 Instapaer。
 
 如果不需要，只需要在配置中将 Instapaper 相关字段留空。
-
 
 ## 协议
 MIT
