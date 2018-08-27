@@ -18,7 +18,7 @@ mainBotHandler.start((ctx) => {
   debug(ctx.update)
   let msg = ctx.update.message
   if (msg.from.id === config.telegram.user_id) return // 排除我自己
-  let reply = `你好，我是 @Astrian 的助理机器人。如果你因为 +86 手机号码而意外无法与他取得联系，请直接将消息发给我，我会将你的消息直接转发给他，他收到后会尽快与你取得联系。`
+  let reply = config.telegram.start_msg
   mainBotSender.sendMessage(msg.from.id, reply, {reply_to_message_id: msg.message_id})
 })
 

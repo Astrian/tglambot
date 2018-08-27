@@ -27,7 +27,8 @@ Follow these steps to config:
 module.exports = {
   telegram: {
     bot_token: '123456789:ABCDEFGhijklmnOPQRSTuvwxyz012345678',
-    user_id: 12345678, // Get it with https://t.me/get_id_bot
+    user_id: 12345678, // Get it with https://t.me/get_id_bot,
+    start_msg: 'hello world' // When your friends /start the bot, this text message will send to them.
   },
   instapaper: { // That information is optional. If you don't need it, just make them as empty strings.
     username: 'someone@example.com',
@@ -94,6 +95,7 @@ module.exports = {
   telegram: {
     bot_token: '123456789:ABCDEFGhijklmnOPQRSTuvwxyz012345678',
     user_id: 12345678, // 可以从 https://t.me/get_id_bot 获取。
+    start_msg: 'hello world' // 当别人 /start 你的 bot 的时候，这条文字消息将回复给他们。
   },
   instapaper: { // 可选项。如果不需要 Instapaper 相关功能，将它们留空。
     username: 'someone@example.com',
