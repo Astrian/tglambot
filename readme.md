@@ -80,7 +80,7 @@ MIT
 2. 使用 SSH 进入你的 VPS。
 3. 安装 Git、Node.js、Nginx 以及 [Certbot](https://certbot.eff.org/)。注意，Certbot（和 Let's Encrypt 证书服务）是推荐使用的 HTTPS 及 SSL 签证服务，但你也可以使用自己的证书服务进行配置。
 4. `git pull https://github.com/Astrian/telegram-helperbot.git`
-5. 赋值 `config.sample.js` 并将新文件命名为 `config.js`。编辑新的 `config.js` 文件，将你的 Telegram、域名和 Instapaper（可选）配置写入，参见下面的配置示例。
+5. 复制 `config.sample.js` 并将新文件命名为 `config.js`。编辑新的 `config.js` 文件，将你的 Telegram、域名和 Instapaper（可选）配置写入，参见下面的配置示例。
 6. 使用 `vi /etc/nginx/sites-available/default` 配置 Nginx。参见下面的配置示例。
 7. 使用 `sudo certbot --nginx` 指令进行签证。这一步只需要跟着命令行提示就行（超超超简单）。
 8. `npm install -g supervisor`
