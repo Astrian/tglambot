@@ -1,0 +1,20 @@
+{
+  "name": "helperbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "export DEBUG=\"helperbot:*\" && supervisor app.js",
+    "start": "supervisor app.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "request": "^2.88.0",
+    "sync_back": "^2.3.2",
+    "telegraf": "^3.22.2"
+  }
+}
