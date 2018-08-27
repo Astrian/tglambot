@@ -1,7 +1,7 @@
 *English version. For Chinese instruction, just scroll down the page.*
 
 # Telegram Helper bot
-In 2018, Telegram make “private chat to strangers” function disabled for China user (with +86 phone number). So if you want your Chinese friend to contact you directly, you can config this bot, and your friend can leave a message to you with it.
+In 2018, Telegram make “private chat to strangers” function disabled for Chinese user (with +86 phone number). So if you want your Chinese friend to contact you directly, you can config this bot, and your friend can leave a message to you with it.
 
 ## How to use
 First, chat to [Bot Father](https://t.me/botfather), and request to make a new bot (by send `/newbot` to him). Then, Bot Father will give you a bot token seems like `123456789:ABCDEFGhijklmnOPQRSTuvwxyz012345678`.
@@ -36,7 +36,7 @@ module.exports = {
   },
   url: {
     domain: 'https://helper.example.com', // MUST USE HTTPS, don't left slash at the end of it.
-	  path: '/helloworld' // Start with slash，Telegram recommends use a long random strings to keep your bot save.
+    path: '/helloworld' // Start with slash，Telegram recommends use a long random strings to keep your bot save.
   }
 };
 ```
@@ -103,7 +103,7 @@ module.exports = {
   },
   url: {
     domain: 'https://helper.example.com', // 必须使用 HTTPS，不要以斜杠结尾。
-	  path: '/helloworld' // 请以斜杠开头，Telegram 推荐使用随机字符串以保证你的 bot 安全（不被他人伪造请求滥用）。
+    path: '/helloworld' // 请以斜杠开头，Telegram 推荐使用随机字符串以保证你的 bot 安全（不被他人伪造请求滥用）。
   }
 };
 ```
