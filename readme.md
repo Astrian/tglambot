@@ -18,7 +18,7 @@ Follow these steps to config:
 6. Config nginx by `vi /etc/nginx/sites-available/default`. See config sample below to know how to config.
 7. Config HTTPS with `sudo certbot --nginx`. Follow the instructions to config it (and it's super easy, really).
 8. `npm install -g supervisor`
-9. `npm install` and `npm start`.
+9. `npm install` and `npm start`, and `/start` the bot. Then tell your friend to chat with bot, the message will forward to you.
 
 ## Config sample
 `config.js`:
@@ -84,7 +84,7 @@ MIT
 6. 使用 `vi /etc/nginx/sites-available/default` 配置 Nginx。参见下面的配置示例。
 7. 使用 `sudo certbot --nginx` 指令进行签证。这一步只需要跟着命令行提示就行（超超超简单）。
 8. `npm install -g supervisor`
-9. `npm install` 之后再 `npm start`，大功告成。
+9. `npm install` 之后再 `npm start`，然后向你的 bot 发送 `/start`。接着，你的好友就可以通过这款 bot 向你留言。
 
 ## 配置示例
 `config.js`：
