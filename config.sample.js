@@ -9,7 +9,7 @@ module.exports = {
     password: 'mYiNst4P4perPassw0rd'
   },
   url: {
-    domain: 'https://helper.astrianzheng.cn',
+    domain: 'https://example.com',
     path: '/helloworld'
   }
 };
