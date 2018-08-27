@@ -11,8 +11,8 @@ const mainBotSender = new Telegram(config.telegram.bot_token, {
   agent: null,
   webhookReply: true
 })
-expressApp.use(mainBotHandler.webhookCallback('/helloworld'))
-mainBotHandler.telegram.setWebhook('https://helper.astrianzheng.cn/helloworld')
+expressApp.use(mainBotHandler.webhookCallback(config.url.path))
+mainBotHandler.telegram.setWebhook(config.url.domain+config.url.path)
 
 mainBotHandler.start((ctx) => {
   debug(ctx.update)
