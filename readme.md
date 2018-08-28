@@ -38,7 +38,7 @@ module.exports = {
   },
   url: {
     domain: 'https://helper.example.com', // MUST USE HTTPS, don't left slash at the end of it.
-    path: '/helloworld' // Start with slash，Telegram recommends use a long random strings to keep your bot save.
+    path: '/helloworld' // Start with slash，Telegram recommends use a long random strings to keep your bot safe.
   }
 };
 ```
@@ -70,7 +70,7 @@ docker container run -p 8000:3001 -it astrian/tglambot
 
 When you run the last one command, you will see `node` will throw errors. 
 
-Don't worry. Let's create a `config.js` file, copy the [config code](https://github.com/Astrian/tglambot/blob/master/config.sample.js), and `docker cp config.js docker cp <container name>:/`
+Don't worry. Let's create a `config.js` file, copy the [config code](https://github.com/Astrian/tglambot/blob/master/config.sample.js), and `docker cp config.js <container name>:/`
 
 Start the container again. Great! It's running. Now you just need to config the Nginx with 8000 port and config the SSL and HTTPS.
 
@@ -158,7 +158,7 @@ docker container run -p 8000:3001 -it astrian/tglambot
 
 运行最后一个指令时，你会发现 `node` 会抛出一些错误。
 
-不用担心，我们只需新建一个 `config.js` 文件，然后复制[配置代码](https://github.com/Astrian/tglambot/blob/master/config.sample.js)，保存后将它复制到 Docker 容器中：`docker cp config.js docker cp <container name>:/`
+不用担心，我们只需新建一个 `config.js` 文件，然后复制[配置代码](https://github.com/Astrian/tglambot/blob/master/config.sample.js)，保存后将它复制到 Docker 容器中：`docker cp config.js <container name>:/`
 
 完成后，重新启动容器，你会发现它已经正常工作了。现在，你可以在 Nginx 配置 8000 的反向代理，并配置 SSL 和 HTTPS，就可以正常使用机器人了。
 
