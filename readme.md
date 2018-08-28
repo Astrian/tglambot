@@ -3,7 +3,9 @@
 # Telegram Helper bot
 In 2018, Telegram make “private chat to strangers” function disabled for Chinese user (with +86 phone number). So if you want your Chinese friend to contact you directly, you can config this bot, and your friend can leave a message to you with it.
 
-## How to use
+## Manual building
+> You can build the bot with docker. See “Build with Docker” part.
+
 First, chat to [Bot Father](https://t.me/botfather), and request to make a new bot (by send `/newbot` to him). Then, Bot Father will give you a bot token seems like `123456789:ABCDEFGhijklmnOPQRSTuvwxyz012345678`.
 
 Next, you will need a VPS and a domain to build this bot (DigitalOcean VPS with Ubuntu OS is recommended).
@@ -53,6 +55,25 @@ server {
 }
 ```
 
+## Build with Docker (Beta)
+> It's a new way to build the bot, and this way is not be verified in production environments. Feel free to submit an issue if you find any problem when build with Docker.
+
+First, you still need a domain name, an VPS and a Telegram bot token (see last part).
+
+Then...
+
+```
+docker pull astrian/tglambot
+docker image build -t astrian/tglambot .
+docker container run -p 8000:3001 -it astrian/tglambot
+```
+
+When you run the last one command, you will see `node` will throw errors. 
+
+Don't worry. Let's create a `config.js` file, copy the [config code](https://github.com/Astrian/tglambot/blob/master/config.sample.js), and `docker cp config.js docker cp <container name>:/`
+
+Start the container again. Great! It's running. Now you just need to config the Nginx with 8000 port and config the SSL and HTTPS.
+
 ## ... by the way
 I make a little Instapaper function in this bot.
 
@@ -70,7 +91,9 @@ MIT
 # Telegram 私聊助理机器人
 2018 年，Telegram 封禁中国用户（+86 手机）的私聊陌生人功能。如果你有让中国手机号用户私聊你的需求，可以尝试这款 bot。
 
-## 使用方法
+## 手动构建机器人
+> 你可以使用 Docker 进行自动化构建，详见「使用 Docker 构建」一节。
+
 请先私聊 [Bot Father](https://t.me/botfather)，向他申请一个新的 bot（发送 `/newbot` 指令给他）。你会获得形如 `123456789:ABCDEFGhijklmnOPQRSTuvwxyz012345678` 的 token。
 
 接着，你需要申请一个 VPS 和域名。推荐使用 DigitalOcean VPS 服务以及 Ubuntu 操作系统。VPS 需要能够访问 Telegram 服务器。
@@ -120,10 +143,29 @@ server {
 }
 ```
 
+## 使用 Docker 构建（测试版）
+> 这是配置机器人的新方式，但这个方式还没在生产环境中进行使用。发现任何问题，请向我提出 issue。
+
+首先，你还是需要一个域名、VPS，以及一个 Telegram 机器人 token（参见上一节）。
+
+然后……
+
+```
+docker pull astrian/tglambot
+docker image build -t astrian/tglambot .
+docker container run -p 8000:3001 -it astrian/tglambot
+```
+
+运行最后一个指令时，你会发现 `node` 会抛出一些错误。
+
+不用担心，我们只需新建一个 `config.js` 文件，然后复制[配置代码](https://github.com/Astrian/tglambot/blob/master/config.sample.js)，保存后将它复制到 Docker 容器中：`docker cp config.js docker cp <container name>:/`
+
+完成后，重新启动容器，你会发现它已经正常工作了。现在，你可以在 Nginx 配置 8000 的反向代理，并配置 SSL 和 HTTPS，就可以正常使用机器人了。
+
 ## 还有件事
 代码里有一个 Instapaper 集成功能。
 
-配置好你的 Instapaper 用户名密码之后，可以向 bot 直接发送或转发 URL 链接，链接就会自动存在你的 Instapaer。
+配置好你的 Instapaper 用户名密码之后，可以向 bot 直接发送或转发 URL 链接，链接就会自动存在你的 Instapaper。
 
 如果不需要，只需要在配置中将 Instapaper 相关字段留空。
 
